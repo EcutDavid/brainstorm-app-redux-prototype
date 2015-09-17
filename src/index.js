@@ -11,3 +11,12 @@ React.render(
     {() => <App />}
   </Provider>,
   document.getElementById('root'))
+
+  let whatWeWant = {
+    color: {
+      red: {},
+      blue: {}
+    }
+  }
+  let anAction =  { type: 'TESTMUTABLE', payload: whatWeWant}
+  store.dispatch(anAction);

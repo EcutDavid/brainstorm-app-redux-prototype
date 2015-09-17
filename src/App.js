@@ -21,10 +21,13 @@ export default class App extends Component {
         width: '50%', height: '50%',
         background: 'rgba(30, 255, 30, 0.5)'
         } } value={JSON.stringify(whatWeWant, null, 4)} />
+        <button style={{margin: '0 auto', display: 'block'}}>Send action</button>
+
       </div>
     )
   }
 }
+
 
 let initialGraphState = {
   color: {
@@ -41,6 +44,10 @@ let whatWeWant = {
 
 export function graphReducer (state = initialGraphState, action = {}) {
   switch (action.type) {
+    case 'TESTMUTABLE':
+      console.log('get TESTMUTABLE');
+      return state = action.payload
+    break;
     default:
       return state
   }
